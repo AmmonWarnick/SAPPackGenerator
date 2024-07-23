@@ -8,7 +8,6 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 import { Link, Outlet } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Global } from "../../utils/Global";
 import Footer from "./Footer";
@@ -34,36 +33,11 @@ export default function Layout({ window }: Props) {
 
   return (
     <>
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        pauseOnHover
-        // theme="light"
-      />
-
       <Box>
         <CssBaseline />
         <AppBar component="nav" sx={{ backgroundColor: Global.primaryColor }}>
           <Toolbar>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ mr: 2, display: { sm: "none" } }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography
-              variant="h6"
-              component="div"
-              sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            >
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               <Link to={"/"} style={{ textDecoration: "none", color: "white" }}>
                 {Global.companyName}
               </Link>
@@ -71,24 +45,7 @@ export default function Layout({ window }: Props) {
             <Box sx={{ display: { xs: "none", sm: "block" } }}></Box>
           </Toolbar>
         </AppBar>
-        <nav>
-          <Drawer
-            container={container}
-            variant="temporary"
-            open={mobileOpen}
-            onClose={handleDrawerToggle}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}
-            sx={{
-              display: { xs: "block", sm: "none" },
-              "& .MuiDrawer-paper": {
-                boxSizing: "border-box",
-                width: drawerWidth,
-              },
-            }}
-          ></Drawer>
-        </nav>
+
         <Box sx={{ p: 0 }}>
           <Toolbar />
           <Outlet />

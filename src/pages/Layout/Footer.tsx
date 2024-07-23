@@ -1,5 +1,4 @@
 import { Col, Container, Row } from "react-bootstrap";
-import React from "react";
 import { Global } from "../../utils/Global";
 import { Button, Link, Typography } from "@mui/material";
 
@@ -25,43 +24,7 @@ export default function Footer({}: FooterProps) {
         fluid
         style={{ backgroundColor: Global.primaryColor, color: "whitesmoke" }}
       >
-        <Row className="d-flex justify-content-around flex-wrap p-4">
-          <Col xs={12} lg={4}>
-            <Row>Quick Links</Row>
-            <Row>
-              <Link href="/pricing" className="link-light">
-                Pricing
-              </Link>
-            </Row>
-            <Row>
-              <Link href="/privacy" className="link-light">
-                Privacy Policy
-              </Link>
-            </Row>
-          </Col>
-          <Col xs={12} lg={4}>
-            <Row>Quick Links</Row>
-            <Row>
-              <Link href="/privacy" className="link-light">
-                Privacy Policy
-              </Link>
-            </Row>{" "}
-            <Row>
-              <Link href="/privacy" className="link-light">
-                Privacy Policy
-              </Link>
-            </Row>{" "}
-            <Row>
-              <Link href="/privacy" className="link-light">
-                Privacy Policy
-              </Link>
-            </Row>
-          </Col>
-          <Col xs={12} lg={4}>
-            <Row>Our mission is your memories.</Row>
-          </Col>
-        </Row>
-        <Row className="d-flex justify-content-center pb-2">
+        <Row className="d-flex justify-content-center p-3">
           <Copyright />
         </Row>
       </Container>

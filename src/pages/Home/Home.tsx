@@ -4,6 +4,7 @@ import { Global } from "../../utils/Global";
 import { Container, Row } from "react-bootstrap";
 import {
   Autocomplete,
+  Button,
   Checkbox,
   FormControlLabel,
   FormGroup,
@@ -14,6 +15,13 @@ import { useEffect } from "react";
 interface HomeProps {}
 
 export default function Home({}: HomeProps) {
+  useEffect(() => {
+    try {
+      // if (adsbygoogle) {
+      //   (adsbygoogle = (window as any).adsbygoogle || []).push({});
+      // }
+    } catch (error) {}
+  }, []);
   return (
     <>
       <Container className="content">
@@ -30,7 +38,6 @@ export default function Home({}: HomeProps) {
           data-ad-format="auto"
           data-full-width-responsive="true"
         ></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
         <h3 className="mt-4">Packs</h3>
         <Row className="justify-content-evenly">
@@ -65,6 +72,7 @@ export default function Home({}: HomeProps) {
             style={{ width: 100 }}
           />
         </Row>
+        <h3 className="mt-4">Sort by</h3>
         <Row>
           <Autocomplete
             disablePortal
@@ -73,6 +81,11 @@ export default function Home({}: HomeProps) {
             sx={{ width: 300 }}
             renderInput={(params) => <TextField {...params} label="Sort By" />}
           />
+        </Row>
+        <Row className="justify-content-center mt-4">
+          <Button variant="contained" style={{ width: 200 }}>
+            Create Pack
+          </Button>
         </Row>
       </Container>
     </>
